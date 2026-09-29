@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Admin - Catering Flamboyan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <h2>Flamboyan Admin</h2>
+  <nav>
+    <a href="#" data-view="dashboard" class="active">Dashboard</a>
+    <a href="#" data-view="pesanan">Pesanan</a>
+    <a href="#" data-view="menu">Menu &amp; Paket</a>
+    <a href="#" data-view="chat">Chat Masuk</a>
+  </nav>
+</aside>
+
+<main>
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="view active">
+    <h1>Dashboard</h1>
+    <div class="stats">
+      <div class="stat"><small>Total pesanan</small><strong id="statTotal">0</strong></div>
+      <div class="stat"><small>Menunggu DP</small><strong id="statDP">0</strong></div>
+      <div class="stat"><small>Omzet (selesai)</small><strong id="statOmzet">Rp0</strong></div>
+      <div class="stat"><small>Chat butuh admin</small><strong id="statChat">0</strong></div>
+    </div>
+    <h3>Pesanan terbaru</h3>
+    <table id="tabelTerbaru"></table>
+  </section>
+
+  <!-- PESANAN -->
+  <section id="pesanan" class="view">
+    <h1>Pesanan</h1>
+    <div class="toolbar">
+      <input type="text" id="cari" placeholder="Cari nama / no pesanan...">
+      <select id="filterStatus">
+        <option value="">Semua status</option>
+        <option>Menunggu DP</option>
+        <option>Diproses</option>
+        <option>Selesai</option>
+        <option>Dibatalkan</option>
+      </select>
+    </div>
+    <table id="tabelPesanan"></table>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="view">
+    <h1>Menu &amp; Paket</h1>
+    <form id="formMenu" class="toolbar">
+      <input type="text" id="menuNama" placeholder="Nama menu/paket" required>
+      <input type="number" id="menuHarga" placeholder="Harga" min="0" required>
+      <button type="submit">Tambah</button>
+    </form>
+    <table id="tabelMenu"></table>
+  </section>
+
+  <!-- CHAT -->
+  <section id="chat" class="view">
+    <h1>Chat Masuk</h1>
+    <p class="note">Chat yang tidak bisa dijawab AI Agent muncul di sini.</p>
+    <div id="daftarChat"></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
